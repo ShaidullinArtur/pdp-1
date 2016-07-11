@@ -1,0 +1,7 @@
+.comments-item
+  strong
+    = @comment.user.full_name
+  small
+    = @comment.created_at
+  p
+    = @comment.text

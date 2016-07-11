@@ -10,6 +10,6 @@
 #= require current_user
 #= require skim
 #= require_tree ../templates
-#= require_tree .
+#= require ./components/all
 
 $(document).foundation()

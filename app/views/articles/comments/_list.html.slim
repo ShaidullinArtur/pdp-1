@@ -1,0 +1,8 @@
+.comments-list
+  - comments.each do |comment|
+    .comments-item
+      strong
+        = comment.user.full_name
+      small
+        = I18n.l(comment.created_at, format: :us_date)
+      p= comment.text

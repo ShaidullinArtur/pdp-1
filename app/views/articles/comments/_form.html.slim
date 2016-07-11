@@ -1,0 +1,9 @@
+= simple_form_for Comment.new, url: article_comments_path(article), html: { class: "comments-form" } do |f|
+  .form-inputs
+    .row
+      .columns
+        = f.input :text, as: :text, required: true, placeholder: "Comment text", input_html: { class: "comments-form-text" }
+  .form-actions
+    .row
+      .medium-6.columns
+        = f.submit class: "button"
