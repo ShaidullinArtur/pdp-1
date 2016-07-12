@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :article do
-    user { build :user }
-    title { Faker::Lorem.sentence }
-    text { Faker::Lorem.paragraph }
+    author { build :user }
+    title { Faker::Lorem.sentence(20) }
+    text { Faker::Lorem.paragraph(20) }
   end
-
 end
