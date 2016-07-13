@@ -1,6 +1,6 @@
-# Rails Base
+# PDP-1
 
-[![Build Status](https://semaphoreci.com/api/v1/fs/rails-base/branches/master/shields_badge.svg)](https://semaphoreci.com/fs/rails-base)
+[![Build Status](https://semaphoreci.com/api/v1/ShaidullinArtur/pdp-1/branches/master/badge.svg)](https://semaphoreci.com/ShaidullinArtur/pdp-1)
 [![Test Coverage](https://codeclimate.com/github/fs/rails-base/badges/coverage.svg)](https://codeclimate.com/github/fs/rails-base)
 [![Code Climate](https://codeclimate.com/github/fs/rails-base.png)](https://codeclimate.com/github/fs/rails-base)
 
