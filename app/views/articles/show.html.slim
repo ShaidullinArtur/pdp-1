@@ -13,7 +13,8 @@
     .medium-4.columns
       .button-group
         = link_to "Edit Article", edit_article_path(article), class: "small button"
-        = link_to "Destroy Article", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "small alert button"
+        = link_to "Destroy Article", article_path(article), method: :delete,
+          data: { confirm: "Are you sure?" }, class: "small alert button"
 .comments
   .row
     .medium-offset-5.small-centered.columns Comments
