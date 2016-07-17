@@ -17,5 +17,5 @@
             li
               a href="#" Author: #{article.author_full_name}
             li
-              a href="#" Comments: 3
+              a href="#" Comments: #{article.recent_comments.count}
     = paginate articles

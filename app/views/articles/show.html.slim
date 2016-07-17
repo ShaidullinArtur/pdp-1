@@ -1,11 +1,24 @@
-h2 = article.id
-h2 = article.created_at
-h2 = article.author_full_name
-h2 = article.title
-h2 = article.text
-
-- if policy(article).update?
-  .button-group
-    = link_to "Edit Article", edit_article_path(article), class: "small button"
-    = link_to "Destroy Article", article_path(article), method: :delete,
-      data: { confirm: "Are you sure?" }, class: "small alert button"
+.row
+  .medium-offset-2.medium-8.columns
+    .blog-post
+      h3
+        = article.title
+        small
+          = I18n.l(article.created_at, format: :us_date)
+      p= article.text
+      .callout
+        ul.menu.simple
+          li Author: #{article.author_full_name}
+  - if policy(article).update?
+    .medium-4.columns
+      .button-group
+        = link_to "Edit Article", edit_article_path(article), class: "small button"
+        = link_to "Destroy Article", article_path(article), method: :delete,
+          data: { confirm: "Are you sure?" }, class: "small alert button"
+.comments
+  .row
+    .medium-offset-5.small-centered.columns Comments
+  .row
+    .medium-offset-2.medium-8.columns
+      = render partial: "articles/comments/form", locals: { article: article }
+      = render partial: "articles/comments/list", locals: { comments: article.recent_comments }
