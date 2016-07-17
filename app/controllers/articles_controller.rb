@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   expose(:articles)
   expose_decorated(:article, attributes: :article_params)
 
-  before_filter :authorize_article, only: %i(edit update destroy)
+  before_action :authorize_article, only: %i(edit update destroy)
 
   def index
     self.articles = Article.includes(:author).order(created_at: :desc).page(params[:page]).decorate
