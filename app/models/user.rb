@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   validates :full_name, presence: true
 
   has_many :articles
+
+  mount_uploader :photo, PhotoUploader
 end
