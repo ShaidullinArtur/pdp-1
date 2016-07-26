@@ -1,0 +1,12 @@
+= simple_form_for feedback_form, url: feedback_path do |f|
+  .form-inputs
+    .row
+      .columns
+        = f.input :email, required: true, autofocus: true, placeholder: "Email"
+    .row
+      .columns
+        = f.input :text, as: :text, required: true, placeholder: "Comment text"
+  .form-actions
+    .row
+      .medium-6.columns
+        = f.submit class: "button"
