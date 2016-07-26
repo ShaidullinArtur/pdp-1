@@ -42,6 +42,9 @@ gem "rollbar"
 gem "seedbank"
 gem "stackprof"
 gem "active_model_serializers"
+gem "carrierwave"
+gem "fog"
+gem "rmagick", require: false
 
 group :staging, :production do
   gem "newrelic_rpm"

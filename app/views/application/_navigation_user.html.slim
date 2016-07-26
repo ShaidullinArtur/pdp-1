@@ -1,7 +1,10 @@
 ul.right
   - if user_signed_in?
     li.has-dropdown
-      a.user-dropdown(href="#") = current_user.full_name_with_email
+      a.user-dropdown(href="#")
+        = image_tag(current_user.photo_thumbnail) if current_user.photo_thumbnail.present?
+        |&nbsp;
+        = current_user.full_name_with_email
       ul.dropdown
         li
           = link_to "Edit profile", edit_user_registration_path
