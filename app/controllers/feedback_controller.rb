@@ -2,6 +2,7 @@ class FeedbackController < ApplicationController
   expose(:feedback_form, attributes: :feedback_params)
 
   def new
+    feedback_form.email = current_user.email if user_signed_in?
   end
 
   def create

@@ -20,5 +20,6 @@
     .medium-offset-5.small-centered.columns Comments
   .row
     .medium-offset-2.medium-8.columns
-      = render partial: "articles/comments/form", locals: { article: article }
+      - if user_signed_in?
+        = render partial: "articles/comments/form", locals: { article: article }
       = render partial: "articles/comments/list", locals: { comments: article.recent_comments }
