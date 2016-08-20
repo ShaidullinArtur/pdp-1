@@ -1,12 +1,10 @@
 class FeedbackMailer < ActionMailer::Base
-  default from: "no-reply@gogreenride.com"
-
   def feedback(email, text)
     @email = email
     @text = text
 
     mail(
-      to: ENV["MAILER_RECEIVER_ADDRESS"],
+      to: ENV.fetch("MAILER_RECEIVER_ADDRESS", "no-reply@example.org"),
       subject: I18n.t("mailers.feedback.subject")
     )
   end
