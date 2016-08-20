@@ -4,9 +4,9 @@
       = link_to "New Article", new_article_path, class: "button small"
 
 #content.row
-  .medium-offset-2.medium-8.columns
+  .medium-offset-2.medium-8.columns.articles-list
     - articles.each do |article|
-      .blog-post
+      .blog-post.articles-item
         h3
           = link_to article.title, article_path(article)
           small
