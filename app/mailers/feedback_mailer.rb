@@ -1,4 +1,6 @@
 class FeedbackMailer < ActionMailer::Base
+  default from: "no-reply@gogreenride.com"
+
   def feedback(email, text)
     @email = email
     @text = text
