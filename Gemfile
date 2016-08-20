@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.3.0"
 
-gem "rails", "4.2.6"
+gem "rails", "4.2.7.1"
 gem "pg"
 
 # assets
@@ -36,7 +36,7 @@ gem "memory_profiler"
 gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
-gem "rack-mini-profiler", require: false
+gem "rack-mini-profiler", "0.10.1", require: false
 gem "responders"
 gem "rollbar"
 gem "seedbank"
