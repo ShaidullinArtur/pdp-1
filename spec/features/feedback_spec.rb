@@ -21,12 +21,6 @@ feature "Send Feedback" do
       end
 
       expect(page).to have_content("Thank's for your Feedback")
-
-      email = open_last_email
-
-      expect(email).to have_subject("New feedback")
-      expect(email).to have_body_text(current_user.email)
-      expect(email).to have_body_text("New Feedback Text")
     end
   end
 
