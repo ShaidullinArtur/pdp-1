@@ -3,14 +3,19 @@ require "rails_helper"
 feature "Send Feedback" do
   context "when user signed in" do
     include_context "current user signed in"
+    let(:mailer) { double }
+    let(:feedback_text) { "New Feedback Text" }
 
     scenario "User send feedback" do
+      expect(FeedbackMailer).to receive(:feedback).with(current_user.email, feedback_text).and_return(mailer)
+      expect(mailer).to receive(:deliver)
+
       visit new_feedback_path
 
       within ".new_feedback" do
         expect(find_field("Email").value).to eq(current_user.email)
 
-        fill_in "Text", with: "New Feedback Text"
+        fill_in "Text", with: feedback_text
 
         click_button("Create Feedback")
       end

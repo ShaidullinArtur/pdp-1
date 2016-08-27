@@ -4,7 +4,7 @@ class FeedbackMailer < ActionMailer::Base
     @text = text
 
     mail(
-      to: ENV("MAILER_RECEIVER_ADDRESS"),
+      to: ENV["MAILER_RECEIVER_ADDRESS"],
       subject: I18n.t("mailers.feedback.subject")
     )
   end
